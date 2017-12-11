@@ -95,7 +95,7 @@ suspend fun encodeChunked(output: ByteWriteChannel, input: ByteReadChannel) {
     } catch (cause: Throwable) {
         output.close(cause)
     } finally {
-        output.flush()
+        output.close()
         DefaultByteBufferPool.recycle(buffer)
         ChunkSizeBufferPool.recycle(chunkSizeBuffer)
     }
