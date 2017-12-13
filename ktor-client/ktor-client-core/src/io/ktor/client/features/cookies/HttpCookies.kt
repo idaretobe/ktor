@@ -43,7 +43,7 @@ class HttpCookies(private val storage: CookiesStorage) {
             scope.requestPipeline.intercept(HttpRequestPipeline.State) { content: OutgoingContent ->
                 if (content is OutgoingContent.ProtocolUpgrade) return@intercept
 
-                proceedWith(content.wrapCookies { oldHeaders ->
+                proceedWith(content.wrapHeaders { oldHeaders ->
                     val builder = HeadersBuilder()
                     builder.appendAll(oldHeaders)
 
