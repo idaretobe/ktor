@@ -10,7 +10,7 @@ val DEFAULT_HTTP_BUFFER_SIZE = 4096
 val HTTP_CLIENT_THREAD_COUNT = 4
 
 val HTTP_CLIENT_DEFAULT_DISPATCHER by lazy {
-    newFixedThreadPoolContext(HTTP_CLIENT_THREAD_COUNT, "ktor-client:ApacheEngine context")
+    newFixedThreadPoolContext(HTTP_CLIENT_THREAD_COUNT, "ktor-client-dispatcher")
 }
 
 object HttpClientDefaultPool : DefaultPool<ByteBuffer>(DEFAULT_HTTP_POOL_SIZE) {
