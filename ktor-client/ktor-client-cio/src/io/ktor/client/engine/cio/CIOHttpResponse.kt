@@ -46,6 +46,7 @@ class CIOHttpResponse(
                 executionContext.completeExceptionally(cause)
                 channel.close(cause)
             } finally {
+                channel.close()
                 executionContext.complete(Unit)
             }
         }
