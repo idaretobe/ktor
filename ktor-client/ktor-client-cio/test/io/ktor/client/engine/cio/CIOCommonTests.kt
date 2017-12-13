@@ -12,5 +12,3 @@ class CIOCookiesTest : CookiesTest(CIO)
 class CIOPostTest : PostTest(CIO)
 
 class CIOFullFormTest : FullFormTest(CIO)
-
-class CIOCancelTest : CancelTest(CIO)
